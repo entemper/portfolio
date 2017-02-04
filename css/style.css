@@ -1,0 +1,335 @@
+/* --------------------------------
+
+Variables
+
+-------------------------------- */
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%; }
+
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 1.6rem;
+  font-family: "proxima-nova-1", "proxima-nova-2", "Open Sans", sans-serif;
+  color: #0a72af;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    color: #0aaf9a; }
+  a:active {
+    color: white; }
+
+a.text-link {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  white-space: nowrap;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear; }
+  a.text-link:hover {
+    background-color: white;
+    color: #0aaf9a; }
+  a.text-link:active {
+    background-color: #0a72af;
+    color: white; }
+
+h1 {
+  color: white;
+  margin: 2em auto 1em auto;
+  font-size: 3rem;
+  font-weight: 300; }
+  @media only screen and (min-width: 768px) {
+    h1 {
+      font-size: 7rem;
+      margin: 1em auto; } }
+
+h2 {
+  color: white;
+  margin: 3em auto 2em auto;
+  font-size: 3rem;
+  font-weight: 300; }
+  @media only screen and (min-width: 768px) {
+    h2 {
+      font-size: 3rem;
+      margin: 1em auto; } }
+
+/* --------------------------------
+
+Patterns
+
+-------------------------------- */
+.menu {
+  margin: 40px auto; }
+  @media only screen and (min-width: 768px) {
+    .menu {
+      position: fixed;
+      left: 45px;
+      top: 45px;
+      margin: 0; } }
+
+.icon {
+  width: 30px;
+  fill: white;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  -webkit-transform: translate3d(0, 0, 0); }
+  .icon:hover {
+    animation: bounce 0.3s; }
+
+@keyframes bounce {
+  0% {
+    transform: scale(1); }
+  60% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+/* --------------------------------
+
+Navigation
+
+-------------------------------- */
+.nav {
+  color: white;
+  padding: 20px;
+  margin: 20px;
+  z-index: 999;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  display: block;
+  background-color: #0a72af; }
+  .nav:hover {
+    color: #04334f; }
+  .nav:active {
+    color: black; }
+
+@media only screen and (min-width: 768px) {
+  .nav {
+    position: fixed;
+    padding: 10px;
+    bottom: auto; }
+    .nav.prev {
+      left: 0px;
+      top: 50%;
+      margin: -10px 20px 20px 0px; }
+      .nav.prev:hover:after {
+        content: ' Previous'; }
+    .nav.next {
+      right: 0px;
+      top: 50%;
+      margin: -10px 0px 20px 20px; }
+      .nav.next:hover:before {
+        content: 'Next '; }
+
+  .nav.back {
+    display: block; } }
+/* --------------------------------
+
+Layout
+
+-------------------------------- */
+main {
+  padding: 10px;
+  text-align: center; }
+  main .main-content {
+    position: relative; }
+    main .main-content > div {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch; }
+    main .main-content.index {
+      /* .main-content basic style - index page */
+      background-size: cover;
+      background-position: bottom right;
+      background-image: url("../img/background.jpg");
+      background-repeat: no-repeat;
+      /* vertically center its content */
+      display: table;
+      width: 100%; }
+      main .main-content.index > div {
+        /* vertically center the content inside the .index */
+        display: table-cell;
+        vertical-align: middle;
+        background-image: -webkit-linear-gradient(top, rgba(10, 114, 175, 0.85) 0%, rgba(10, 175, 154, 0.95));
+        background-image: linear-gradient(to bottom, rgba(10, 114, 175, 0.85) 0%, rgba(10, 175, 154, 0.95)); }
+    main .main-content.work {
+      /* .main-content basic style - work page */
+      background-color: white; }
+    main .main-content.about {
+      /* .main-content basic style - about page */
+      display: table;
+      width: 100%;
+      background-size: cover;
+      background-position: left center;
+      background-image: url("../img/kevin.jpg");
+      background-repeat: no-repeat; }
+      main .main-content.about > div {
+        background-image: -webkit-linear-gradient(top, rgba(10, 114, 175, 0.85) 0%, rgba(10, 175, 154, 0.95));
+        background-image: linear-gradient(to bottom, rgba(10, 114, 175, 0.85) 0%, rgba(10, 175, 154, 0.95)); }
+  main p {
+    width: 80%;
+    max-width: 768px;
+    margin: 1em auto;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: white;
+    text-align: left; }
+  @media only screen and (min-width: 768px) {
+    main {
+      height: 100vh;
+      padding: 10px; }
+      main .main-content {
+        height: calc(100vh - 20px); }
+      main.index > div {
+        padding-top: 200px; }
+      main.index > div {
+        padding-top: 50px; }
+      main p {
+        font-size: 3rem;
+        line-height: 2; } }
+
+/* --------------------------------
+
+About pages
+
+-------------------------------- */
+.about p {
+  font-size: 1.6rem;
+  line-height: 1.75em;
+  max-width: 460px; }
+@media only screen and (min-width: 768px) {
+  .about p {
+    font-size: 1.6rem; } }
+
+/* --------------------------------
+
+Work
+
+-------------------------------- */
+.work h1 {
+  color: #0aaf9a; }
+.work .grid {
+  padding: 20px;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: block; }
+  .work .grid a {
+    text-decoration: none;
+    background-color: transparent;
+    line-height: 0; }
+  .work .grid .item {
+    width: 100%;
+    float: none;
+    margin: 10px auto;
+    display: inline-block;
+    position: relative; }
+    .work .grid .item .thumb-hover {
+      display: none; }
+    .work .grid .item .projectname-hover {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      color: white;
+      font-size: 1em;
+      font-weight: 300;
+      left: 0;
+      top: 0;
+      justify-content: center;
+      align-items: center; }
+    .work .grid .item img {
+      width: 100%;
+      height: 100%; }
+    @media only screen and (min-width: 768px) {
+      .work .grid .item:hover .thumb {
+        display: none; }
+      .work .grid .item:hover .thumb-hover {
+        display: inline; }
+      .work .grid .item:hover .projectname-hover {
+        display: flex; }
+      .work .grid .item .projectname-hover {
+        width: 100%;
+        height: 100%;
+        font-size: 1em; } }
+    @media only screen and (min-width: 1440px) {
+      .work .grid .item .projectname-hover {
+        font-size: 2em; } }
+  @media only screen and (min-width: 768px) {
+    .work .grid .item {
+      width: calc(50% - 40px);
+      float: left;
+      margin: 20px; }
+      .work .grid .item img {
+        width: 100%; } }
+  @media only screen and (min-width: 1440px) {
+    .work .grid .item {
+      width: calc(50% - 40px);
+      float: left;
+      margin: 20px; }
+      .work .grid .item img {
+        width: 100%; } }
+@media only screen and (min-width: 1440px) {
+  .work .grid {
+    max-width: 1360px; } }
+
+/* --------------------------------
+
+Work pages
+
+-------------------------------- */
+.work-page .description {
+  color: black;
+  font-size: 1em;
+  margin: 30px auto 0px auto; }
+.work-page .fullwidth {
+  width: 100%;
+  margin: 10px auto; }
+  @media only screen and (min-width: 768px) {
+    .work-page .fullwidth {
+      padding: 20px;
+      margin: 0; }
+      .work-page .fullwidth .grid {
+        max-width: 1360px; } }
+@media only screen and (min-width: 1440px) {
+  .work-page .grid {
+    max-width: 1200px; }
+    .work-page .grid .item {
+      width: calc(50% - 40px);
+      float: left;
+      margin: 20px; }
+      .work-page .grid .item img {
+        width: 100%; } }
+
+/* --------------------------------
+
+Work page colors
+
+-------------------------------- */
+.work-home, .work-page {
+  background-color: #0aaf9a; }
+  .work-home .main-content.work h1, .work-page .main-content.work h1 {
+    color: #0aaf9a; }
+  .work-home .icon, .work-page .icon {
+    fill: #0aaf9a; }
+    .work-home .icon:hover, .work-page .icon:hover {
+      fill: #0a72af; }
+
+.projectname-hover {
+  background-color: rgba(10, 114, 175, 0.9); }
