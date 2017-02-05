@@ -20,7 +20,7 @@ body {
   width: 100%;
   height: 100%;
   font-size: 1.6rem;
-  font-family: "proxima-nova-1", "proxima-nova-2", "Open Sans", sans-serif;
+  font-family: "Actor", "Open Sans", sans-serif;
   color: #0a72af;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -54,7 +54,7 @@ h1 {
   font-weight: 300; }
   @media only screen and (min-width: 768px) {
     h1 {
-      font-size: 7rem;
+      font-size: 5rem;
       margin: 1em auto; } }
 
 h2 {
@@ -77,8 +77,8 @@ Patterns
   @media only screen and (min-width: 768px) {
     .menu {
       position: fixed;
-      left: 45px;
-      top: 45px;
+      left: 70px;
+      top: 70px;
       margin: 0; } }
 
 .icon {
@@ -112,9 +112,9 @@ Navigation
   -moz-transition: all 0.1s linear;
   transition: all 0.1s linear;
   display: block;
-  background-color: #0a72af; }
+  background-color: #0aaf9a; }
   .nav:hover {
-    color: #04334f; }
+    color: white; }
   .nav:active {
     color: black; }
 
@@ -146,6 +146,8 @@ Layout
 main {
   padding: 10px;
   text-align: center; }
+  main.work-page {
+    padding: 0; }
   main .main-content {
     position: relative; }
     main .main-content > div {
@@ -169,7 +171,7 @@ main {
         vertical-align: middle;
         background-image: -webkit-linear-gradient(top, rgba(10, 114, 175, 0.85) 0%, rgba(10, 175, 154, 0.95));
         background-image: linear-gradient(to bottom, rgba(10, 114, 175, 0.85) 0%, rgba(10, 175, 154, 0.95)); }
-    main .main-content.work {
+    main .main-content.work, main .main-content.work-item {
       /* .main-content basic style - work page */
       background-color: white; }
     main .main-content.about {
@@ -194,9 +196,11 @@ main {
   @media only screen and (min-width: 768px) {
     main {
       height: 100vh;
-      padding: 10px; }
+      padding: 36px; }
       main .main-content {
-        height: calc(100vh - 20px); }
+        height: calc(100vh - 72px); }
+        main .main-content.work, main .main-content.work-item {
+          height: 100vh; }
       main.index > div {
         padding-top: 200px; }
       main.index > div {
@@ -223,26 +227,26 @@ About pages
 Work
 
 -------------------------------- */
-.work h1 {
+.work h1, .work-item h1 {
   color: #0aaf9a; }
-.work .grid {
+.work .grid, .work-item .grid {
   padding: 20px;
   max-width: 1120px;
   margin: 0 auto;
   display: block; }
-  .work .grid a {
+  .work .grid a, .work-item .grid a {
     text-decoration: none;
     background-color: transparent;
     line-height: 0; }
-  .work .grid .item {
+  .work .grid .item, .work-item .grid .item {
     width: 100%;
     float: none;
     margin: 10px auto;
     display: inline-block;
     position: relative; }
-    .work .grid .item .thumb-hover {
+    .work .grid .item .thumb-hover, .work-item .grid .item .thumb-hover {
       display: none; }
-    .work .grid .item .projectname-hover {
+    .work .grid .item .projectname-hover, .work-item .grid .item .projectname-hover {
       display: none;
       width: 100%;
       height: 100%;
@@ -254,39 +258,41 @@ Work
       top: 0;
       justify-content: center;
       align-items: center; }
-    .work .grid .item img {
+    .work .grid .item img, .work-item .grid .item img {
       width: 100%;
       height: 100%; }
     @media only screen and (min-width: 768px) {
-      .work .grid .item:hover .thumb {
+      .work .grid .item:hover .thumb, .work-item .grid .item:hover .thumb {
         display: none; }
-      .work .grid .item:hover .thumb-hover {
+      .work .grid .item:hover .thumb-hover, .work-item .grid .item:hover .thumb-hover {
         display: inline; }
-      .work .grid .item:hover .projectname-hover {
+      .work .grid .item:hover .projectname-hover, .work-item .grid .item:hover .projectname-hover {
         display: flex; }
-      .work .grid .item .projectname-hover {
+      .work .grid .item .projectname-hover, .work-item .grid .item .projectname-hover {
         width: 100%;
         height: 100%;
         font-size: 1em; } }
     @media only screen and (min-width: 1440px) {
-      .work .grid .item .projectname-hover {
+      .work .grid .item .projectname-hover, .work-item .grid .item .projectname-hover {
         font-size: 2em; } }
   @media only screen and (min-width: 768px) {
-    .work .grid .item {
+    .work .grid .item, .work-item .grid .item {
       width: calc(50% - 40px);
       float: left;
       margin: 20px; }
-      .work .grid .item img {
+      .work .grid .item img, .work-item .grid .item img {
         width: 100%; } }
   @media only screen and (min-width: 1440px) {
-    .work .grid .item {
+    .work .grid .item, .work-item .grid .item {
       width: calc(50% - 40px);
       float: left;
       margin: 20px; }
-      .work .grid .item img {
+      .work .grid .item.big, .work-item .grid .item.big {
+        width: calc(100% - 40px); }
+      .work .grid .item img, .work-item .grid .item img {
         width: 100%; } }
 @media only screen and (min-width: 1440px) {
-  .work .grid {
+  .work .grid, .work-item .grid {
     max-width: 1360px; } }
 
 /* --------------------------------
