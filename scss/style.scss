@@ -292,7 +292,7 @@ main {
 		.main-content {
 			height: calc(100vh - 72px);
 
-			&.work, &.work-item {
+			&.work-item {
 				height: 100vh;
 			}
 		}
