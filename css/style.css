@@ -145,11 +145,13 @@ Layout
 -------------------------------- */
 main {
   padding: 10px;
-  text-align: center; }
+  text-align: center;
+  height: 100%; }
   main.work-page {
     padding: 0; }
   main .main-content {
-    position: relative; }
+    position: relative;
+    height: 100%; }
     main .main-content > div {
       height: 100%;
       width: 100%;
@@ -171,13 +173,11 @@ main {
         vertical-align: middle;
         background-image: -webkit-linear-gradient(top, rgba(10, 114, 175, 0.85) 0%, rgba(10, 175, 154, 0.95));
         background-image: linear-gradient(to bottom, rgba(10, 114, 175, 0.85) 0%, rgba(10, 175, 154, 0.95)); }
-    main .main-content.work, main .main-content.work-item {
+    main .main-content.work, main .main-content.about, main .main-content.work-item {
       /* .main-content basic style - work page */
       background-color: white; }
     main .main-content.about {
       /* .main-content basic style - about page */
-      display: table;
-      width: 100%;
       background-size: cover;
       background-position: left center;
       background-image: url("../img/kevin.jpg");
