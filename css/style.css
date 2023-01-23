@@ -105,7 +105,7 @@ Navigation
 -------------------------------- */
 .nav {
   color: white;
-  padding: 20px;
+  padding: 30px;
   margin: 20px;
   z-index: 999;
   -webkit-transition: all 0.1s linear;
